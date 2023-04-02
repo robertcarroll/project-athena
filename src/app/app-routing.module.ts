@@ -1,6 +1,6 @@
 import { NgModule, inject } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterModule, RouterStateSnapshot, Routes } from '@angular/router';
-import { AuthGuard } from '@core/guard/auth.guard';
+import { AuthGuard } from './core/guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -15,14 +15,14 @@ const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: () =>
-          import('src/app/modules/home/home.module').then(m => m.HomeModule)
+          import('./modules/home/home.module').then(m => m.HomeModule)
       }
     ]
   },
   {
     path: 'auth',
     loadChildren: () =>
-      import('src/app/modules/auth/auth.module').then(m => m.AuthModule)
+      import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
   // Fallback when no prior routes is matched
   { path: '**', redirectTo: '/auth/login', pathMatch: 'full' }
