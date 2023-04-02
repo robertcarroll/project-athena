@@ -6,10 +6,17 @@
 /out-tsc
 /bazel-out
 
-# Node
+# Node-Yarn
 /node_modules
 npm-debug.log
 yarn-error.log
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 # IDEs and editors
 .idea/
